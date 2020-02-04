@@ -71,4 +71,4 @@ class customArray {
   }
 }
 
-const customArray = new customArray()
+export default customArray
