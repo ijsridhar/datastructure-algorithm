@@ -20,13 +20,8 @@ class customArray {
       return ""
     }
   }
-
-  _shiftItem ( index ) {
-    for ( let i = index; i < this.length; i++ ){
-        this.data[ i ] = this.data[ i + 1 ]
-      }
-  }
-
+  
+  
   _delete( item ){
     if( typeof( item ) == "number" ){
 
@@ -50,21 +45,30 @@ class customArray {
       }
       const array = Object.values( this.data )
       return array
-
+      
     }else{
       
       return ""
-
+      
     }
   }
 
+  _flat ( ...arrays ){
+    let array = []
+    for( let i = 0; i < arrays.length; i++ ){
+      array = array.concat( arrays[i] )
+    }
+    return array
+  }
+  
   //TODO sort, reduce, findIndexOfItem,
-
+  
+  // Utilities function
+  _shiftItem ( index ) {
+    for ( let i = index; i < this.length; i++ ){
+        this.data[ i ] = this.data[ i + 1 ]
+      }
+  }
 }
 
 const customArray = new customArray()
-
-customArray._push( 'Sridhar' )
-customArray._push( 'Janardhan' )
-customArray._push( 'Appytechie' )
-customArray._delete( 1 )
