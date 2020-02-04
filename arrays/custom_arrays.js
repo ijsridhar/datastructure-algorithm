@@ -21,8 +21,7 @@ class customArray {
     }
   }
   
-  
-  _delete( item ){
+  _pop( item ){
     if( typeof( item ) == "number" ){
 
       delete this.data[ item ]
@@ -47,9 +46,9 @@ class customArray {
       return array
       
     }else{
-      
-      return ""
-      
+      delete this.data[ this.length - 1 ]
+      this.length--
+      return this.data      
     }
   }
 
